@@ -40,12 +40,12 @@ curl -k -L -o $ZIP $URL || {
 rm -rf target/*
 
 # create target structure
-mkdir -p target/usr/local/bin
+mkdir -p target/usr/bin
 mkdir -p target/etc/init.d
 cp -r sources/consul/etc/ target/
 
 # unzip
-unzip -qq ${ZIP} -d target/usr/local/bin/
+unzip -qq ${ZIP} -d target/usr/bin/
 rm ${ZIP}
 
 # create rpm

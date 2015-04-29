@@ -41,11 +41,11 @@ curl -k -L -o $ZIP $URL || {
 rm -rf target/*
 
 # create target structure
-mkdir -p target/usr/local/bin/
+mkdir -p target/usr/bin/
 cp -r sources/${NAME}/etc/ target/
 
 # unzip
-tar -xf ${ZIP} -O > target/usr/local/bin/${NAME}
+tar -xf ${ZIP} -O > target/usr/bin/${NAME}
 rm ${ZIP}
 
 # create rpm

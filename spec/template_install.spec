@@ -1,6 +1,6 @@
 #!/bin/bash
 
-chmod +x /usr/local/bin/consul-template
+chmod +x /usr/bin/consul-template
 chmod +x /etc/init.d/consul-template
 
 mkdir -p /var/consul-template > /dev/null 2>&1
