@@ -1,4 +1,3 @@
 {
   "ui_dir": "/opt/consul-ui",
-  "addresses": {"http":"127.0.0.1","dns":"127.0.0.1","rpc":"127.0.0.1"}
 }
