@@ -57,7 +57,7 @@ start() {
     daemon \
         --pidfile=$pidfile \
         --user=$user \
-        " { $exec agent -config-file=$conffile -config-dir=$confdir >> $logfile 2>&1 & } ; echo \$! >| $pidfile "
+        " { $exec $CMD_OPTS >> $logfile 2>&1 & } ; echo \$! >| $pidfile "
     
     RETVAL=$?
     echo
