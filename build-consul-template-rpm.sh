@@ -48,7 +48,7 @@ rm ${ZIP}
 # create rpm
 fpm -s dir -t rpm -f \
        -C target -n ${NAME} \
-       -v ${VERSION} \
+       -v ${VERSION}_${CI_BUILD_ID} \
        -p target \
        -d "consul" \
        --after-install spec/template_install.spec \

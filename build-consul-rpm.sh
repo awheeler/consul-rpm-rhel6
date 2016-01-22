@@ -50,7 +50,7 @@ rm ${ZIP}
 fpm -s dir -t rpm -f \
        -C target \
        -n consul \
-       -v ${VERSION} \
+       -v ${VERSION}_${CI_BUILD_ID} \
        -p target \
        -a ${ARCH} \
        --rpm-ignore-iteration-in-dependencies \

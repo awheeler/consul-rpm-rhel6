@@ -31,7 +31,7 @@ rm ${ZIP}
 # create rpm
 fpm -s dir -t rpm -f \
        -C target -n consul-ui \
-       -v ${VERSION} \
+       -v ${VERSION}_${CI_BUILD_ID} \
        -p target \
        -d "consul" \
        --after-install spec/ui_install.spec \
