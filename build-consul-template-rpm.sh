@@ -14,7 +14,7 @@ if [[ -z "$2" ]]; then
 else
   ARCH=$2
 fi
-#https://github.com/hashicorp/consul-template/releases/download/v0.2.0/consul-template_0.2.0_linux_amd64.tar.gz
+
 case "${ARCH}" in
     i386)
         ZIP=${NAME}_${VERSION}_linux_386.zip
@@ -36,9 +36,6 @@ curl -k -L -o $ZIP $URL || {
     echo $"URL or version not found!" >&2
     exit 1
 }
-
-# clear target foler
-rm -rf target/*
 
 # create target structure
 mkdir -p target/usr/bin/

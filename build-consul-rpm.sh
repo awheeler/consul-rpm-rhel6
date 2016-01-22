@@ -37,9 +37,6 @@ curl -k -L -o $ZIP $URL || {
     exit 1
 }
 
-# clear target foler
-rm -rf target/*
-
 # create target structure
 mkdir -p target/usr/bin
 mkdir -p target/etc/init.d

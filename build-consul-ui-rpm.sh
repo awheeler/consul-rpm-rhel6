@@ -20,9 +20,6 @@ wget --no-check-certificate -q $URL  || {
     exit 1
 }
 
-# clear target foler
-#rm -rf target/*
-
 # create target structure
 mkdir -p target/opt/consul-ui/
 cp -r sources/consul-ui/etc/ target/
