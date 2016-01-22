@@ -9,9 +9,9 @@ fi
 VERSION=$1
 
 
-ZIP=${VERSION}_web_ui.zip
+ZIP=consul_${VERSION}_web_ui.zip
 
-URL="https://dl.bintray.com/mitchellh/consul/${ZIP}"
+URL="https://releases.hashicorp.com/consul/${VERSION}/${ZIP}"
 echo $"Creating consul-ui RPM build file version ${VERSION}"
 
 # fetching consul
@@ -21,7 +21,7 @@ wget --no-check-certificate -q $URL  || {
 }
 
 # clear target foler
-rm -rf target/*
+#rm -rf target/*
 
 # create target structure
 mkdir -p target/opt/consul-ui/
@@ -29,8 +29,6 @@ cp -r sources/consul-ui/etc/ target/
 
 # unzip
 unzip -qq ${ZIP} -d target/opt/consul-ui/
-mv target/opt/consul-ui/dist/* target/opt/consul-ui/
-rm -rf target/opt/consul-ui/dist
 rm ${ZIP}
 
 # create rpm

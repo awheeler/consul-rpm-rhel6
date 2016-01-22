@@ -17,10 +17,10 @@ fi
 #https://github.com/hashicorp/consul-template/releases/download/v0.2.0/consul-template_0.2.0_linux_amd64.tar.gz
 case "${ARCH}" in
     i386)
-        ZIP=${NAME}_${VERSION}_linux_386.tar.gz
+        ZIP=${NAME}_${VERSION}_linux_386.zip
         ;;
     x86_64)
-       ZIP=${NAME}_${VERSION}_linux_amd64.tar.gz
+       ZIP=${NAME}_${VERSION}_linux_amd64.zip
         ;;
     *)
         echo $"Unknown architecture ${ARCH}" >&2
@@ -29,6 +29,7 @@ case "${ARCH}" in
 esac
 
 URL="https://github.com/hashicorp/${NAME}/releases/download/v${VERSION}/${ZIP}"
+URL="https://releases.hashicorp.com/consul-template/${VERSION}/${ZIP}"
 echo $"Creating ${NAME} RPM build file version ${VERSION}"
 
 # fetching consul
@@ -45,7 +46,7 @@ mkdir -p target/usr/bin/
 cp -r sources/${NAME}/etc/ target/
 
 # unzip
-tar -xf ${ZIP} -O > target/usr/bin/${NAME}
+unzip -qq ${ZIP} -d target/usr/bin/
 rm ${ZIP}
 
 # create rpm

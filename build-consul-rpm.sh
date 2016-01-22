@@ -6,6 +6,7 @@ if [[ -z "$1" ]]; then
   exit 1
 fi
 
+NAME=consul
 VERSION=$1
 
 if [[ -z "$2" ]]; then
@@ -16,10 +17,10 @@ fi
 
 case "${ARCH}" in
     i386)
-        ZIP=${VERSION}_linux_386.zip
+        ZIP=${NAME}_${VERSION}_linux_386.zip
         ;;
     x86_64)
-       ZIP=${VERSION}_linux_amd64.zip
+       ZIP=${NAME}_${VERSION}_linux_amd64.zip
         ;;
     *)
         echo $"Unknown architecture ${ARCH}" >&2
@@ -27,7 +28,7 @@ case "${ARCH}" in
         ;;
 esac
 
-URL="https://dl.bintray.com/mitchellh/consul/${ZIP}"
+URL="https://releases.hashicorp.com/consul/${VERSION}/consul_${ZIP}"
 echo $"Creating consul ${ARCH} RPM build file version ${VERSION}"
 
 # fetching consul
