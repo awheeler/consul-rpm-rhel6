@@ -51,6 +51,7 @@ fpm -s dir -t rpm -f \
        -v ${VERSION}_${CI_BUILD_ID} \
        -p target \
        -d "consul" \
+       --config-files etc/sysconfig/consul-template \
        --after-install spec/template_install.spec \
        --after-remove spec/template_uninstall.spec \
        --rpm-ignore-iteration-in-dependencies \
