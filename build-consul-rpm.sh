@@ -54,6 +54,7 @@ fpm -s dir -t rpm -f \
        -p target \
        -a ${ARCH} \
        --config-files etc/sysconfig/consul \
+       --after-upgrade spec/service_upgrade.spec \
        --after-install spec/service_install.spec \
        --after-remove spec/service_uninstall.spec \
        --description "Consul RPM package for RedHat Enterprise Linux 6" \

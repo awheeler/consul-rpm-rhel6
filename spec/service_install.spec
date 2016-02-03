@@ -1,6 +1,6 @@
 #!/bin/bash
 
-useradd -r -g consul -d /var/lib/consul -s /sbin/nologin -c "consul.io user" consul
+useradd -r -d /var/lib/consul -s /sbin/nologin -c "consul.io user" consul
 mkdir -p /var/lib/consul
 chown consul:consul /var/lib/consul/
 chkconfig --add consul
