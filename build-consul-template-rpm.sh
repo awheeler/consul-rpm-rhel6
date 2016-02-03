@@ -53,8 +53,9 @@ fpm -s dir -t rpm -f \
        -d "consul" \
        --config-files etc/sysconfig/consul-template \
        --after-upgrade spec/template_upgrade.spec \
+       --before-upgrade spec/template_upgrade.spec \
        --after-install spec/template_install.spec \
-       --after-remove spec/template_uninstall.spec \
+       --before-remove spec/template_uninstall.spec \
        --description "Consul-template RPM package for RedHat Enterprise Linux 6" \
        --url "https://github.com/hypoport/consul-rpm-rhel6" \
        usr/ etc/
