@@ -35,7 +35,6 @@ fpm -s dir -t rpm -f \
        -p target \
        -d "consul" \
        --after-install spec/ui_install.spec \
-       --rpm-ignore-iteration-in-dependencies \
        --description "Consul-UI RPM package for RedHat Enterprise Linux 6" \
        --url "https://github.com/hypoport/consul-rpm-rhel6" \
        opt/ etc/

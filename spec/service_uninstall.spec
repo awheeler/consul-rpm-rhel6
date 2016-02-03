@@ -1,5 +1,5 @@
 #!/bin/bash
 
-chkconfig --del consul > /dev/null 2>&1
+chkconfig --del consul
 
-userdel -r consul > /dev/null 2>&1
+userdel -r consul

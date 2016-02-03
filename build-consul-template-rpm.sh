@@ -54,7 +54,6 @@ fpm -s dir -t rpm -f \
        --config-files etc/sysconfig/consul-template \
        --after-install spec/template_install.spec \
        --after-remove spec/template_uninstall.spec \
-       --rpm-ignore-iteration-in-dependencies \
        --description "Consul-template RPM package for RedHat Enterprise Linux 6" \
        --url "https://github.com/hypoport/consul-rpm-rhel6" \
        usr/ etc/

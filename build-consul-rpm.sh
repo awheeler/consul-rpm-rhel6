@@ -53,7 +53,6 @@ fpm -s dir -t rpm -f \
        -v ${VERSION}_${CI_BUILD_ID} \
        -p target \
        -a ${ARCH} \
-       --rpm-ignore-iteration-in-dependencies \
        --config-files etc/sysconfig/consul \
        --after-install spec/service_install.spec \
        --after-remove spec/service_uninstall.spec \
