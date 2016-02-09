@@ -1,2 +1,2 @@
 
-CMD_OPTS="-config=/etc/consul-template/config/"
+CMD_OPTS="-config=/etc/consul-template/config/ -wait=5s:30s"

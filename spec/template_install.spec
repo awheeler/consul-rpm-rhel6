@@ -9,4 +9,5 @@ mkdir -p /etc/consul-template/template > /dev/null 2>&1
 useradd -r -d /var/lib/consul-template -s /sbin/nologin -c "consul.io template user" consul-template
 chown consul-template:consul-template /var/lib/consul-template/
 
-chkconfig --add consul-template
+# We want to enable consul-template by default
+# chkconfig --add consul-template
